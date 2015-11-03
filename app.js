@@ -42,7 +42,10 @@ var pikePlaceMarket = {
       console.log(this.hours[h] + ': ' + this.hourCookies[h] + ' cookies.');
       cookieHourList.appendChild(cookieHourItem);
     }
+
+    var cookieHourItem = document.createElement('li');
     cookieHourItem.innerHTML = 'Total: ' + this.totalCookies + ' cookies.';
+    cookieHourList.appendChild(cookieHourItem);
   }
 };
 
