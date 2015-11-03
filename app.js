@@ -1,6 +1,6 @@
 var pikePlaceMarket = {
 
-  name: "Pike Place Market"
+  name: "Pike Place Market",
   hours: ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'],
   hourCookies: [],
   totalCookies: 0,
@@ -21,7 +21,7 @@ var pikePlaceMarket = {
 };
 
 var seaTacAirport = {
-  name: "SeaTac Airport"
+  name: "SeaTac Airport",
   hours: ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'],
   hourCookies: [],
   totalCookies: 0,
@@ -42,7 +42,7 @@ var seaTacAirport = {
 };
 
 var southcenterMall = {
-  name: "SouthcenterMall"
+  name: "Southcenter Mall",
   hours: ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'],
   hourCookies: [],
   totalCookies: 0,
@@ -63,7 +63,7 @@ var southcenterMall = {
 };
 
 var bellevueSquare = {
-  name: "Bellevue Square"
+  name: "Bellevue Square",
   hours: ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'],
   hourCookies: [],
   totalCookies: 0,
@@ -84,7 +84,7 @@ var bellevueSquare = {
 };
 
 var alki = {
-  name: "Alki"
+  name: "Alki",
   hours: ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'],
   hourCookies: [],
   totalCookies: 0,
@@ -103,3 +103,24 @@ var alki = {
     }
   }
 };
+
+
+var store = [pikePlaceMarket, seaTacAirport, southcenterMall, bellevueSquare, alki];
+
+for (var s = 0; s < store.length; s++) {
+  var storeName = document.createElement('h2');
+  var cookieHourList = document.createElement('ul');
+  var cookieHourItem = document.createElement('li');
+  console.log(store[s].name);
+  storeName.innerHTML = store[s].name;
+  document.body.appendChild(storeName);
+  document.body.appendChild(cookieHourList);
+  store[s].calcCookies();
+  for (var h = 0; h < store[s].hours.length; h++) {
+    console.log('Store = ' + store[s] + ', store[s].hours.length = ' + store[s].hours.length)
+    cookieHourItem.innerHTML = store[s].hours[h] + ': ' + store[s].hourCookies[h] + ' cookies.';
+    cookieHourList.appendChild(cookieHourItem);
+  }
+  cookieHourItem.innerHTML = 'Total: ' + store[s].totalCookies + ' cookies.';
+}
+
