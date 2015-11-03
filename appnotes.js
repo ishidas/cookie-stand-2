@@ -1,12 +1,12 @@
-var pikePlaceMarket = {
+function CookieStand(name, minCustHr, maxCustHr, avgCookies)
 
-  name: "Pike Place Market",
-  hours: ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'],
-  hourCookies: [],
-  totalCookies: 0,
-  minCustHr: 17,
-  maxCustHr: 88,
-  avgCookies: 5.2,
+  this.name = name;
+  this.minCustHr = minCustHr;
+  this.maxCustHr = maxCustHr;
+  this.avgCookies = avgCookies;
+  this.hours = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
+  this.hourCookies = [];
+  this.totalCookies = 0;
 
   customersPerHour: function() {
     return Math.floor(Math.random() * (this.maxCustHr - this.minCustHr + 1)) + this.minCustHr;
@@ -34,11 +34,10 @@ var pikePlaceMarket = {
     document.body.appendChild(cookieHourList);
     // this.calcCookies();
     // console.log(this.name + "'s cookies " + this.hourCookies[0] + ' ' + this.hourCookies[1] + ' ' + this.hourCookies[2] + ' ' + this.hourCookies[3] + ' ' + this.hourCookies[4] + ' ' + this.hourCookies[5] + ' ' + this.hourCookies[6] + ' ' + this.hourCookies[7] + ' ' );
-    for (var h = 0; h < this.hours.length; h++) {
+    for (var h = 0; h <= this.hours.length; h++) {
       var cookieHourItem = document.createElement('li');
       console.log('Store = ' + this.name + ', this.hours.length = ' + this.hours.length);
       cookieHourItem.innerHTML = this.hours[h] + ': ' + this.hourCookies[h] + ' cookies.';
-      console.log('h= ' + h);
       console.log(this.hours[h] + ': ' + this.hourCookies[h] + ' cookies.');
       cookieHourList.appendChild(cookieHourItem);
     }
