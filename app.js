@@ -110,15 +110,17 @@ var store = [pikePlaceMarket, seaTacAirport, southcenterMall, bellevueSquare, al
 for (var s = 0; s < store.length; s++) {
   var storeName = document.createElement('h2');
   var cookieHourList = document.createElement('ul');
-  var cookieHourItem = document.createElement('li');
   console.log(store[s].name);
   storeName.innerHTML = store[s].name;
   document.body.appendChild(storeName);
   document.body.appendChild(cookieHourList);
   store[s].calcCookies();
-  for (var h = 0; h < store[s].hours.length; h++) {
+  console.log(store[s].name + "'s cookies " + store[s].hourCookies[0] + ' ' + store[s].hourCookies[1] + ' ' + store[s].hourCookies[2] + ' ' + store[s].hourCookies[3] + ' ' + store[s].hourCookies[4] + ' ' + store[s].hourCookies[5] + ' ' + store[s].hourCookies[6] + ' ' + store[s].hourCookies[7] + ' ' );
+  for (var h = 0; h <= store[s].hours.length; h++) {
+    var cookieHourItem = document.createElement('li');
     console.log('Store = ' + store[s] + ', store[s].hours.length = ' + store[s].hours.length)
     cookieHourItem.innerHTML = store[s].hours[h] + ': ' + store[s].hourCookies[h] + ' cookies.';
+    console.log(store[s].hours[h] + ': ' + store[s].hourCookies[h] + ' cookies.');
     cookieHourList.appendChild(cookieHourItem);
   }
   cookieHourItem.innerHTML = 'Total: ' + store[s].totalCookies + ' cookies.';
