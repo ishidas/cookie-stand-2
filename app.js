@@ -80,4 +80,3 @@ for (var s = 0; s < store.length; s++) {
   store[s].calcCookies();
   store[s].display();
 }
-
