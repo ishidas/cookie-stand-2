@@ -7,6 +7,22 @@
 <body>
   <main>
     <section id="tableSpace"></section>
+    <form id = "update-form">
+      <fieldset>
+        <legend>Add New Store Details</legend><br />
+        <label>Store Name</label><br />
+        <input name="name" type="text" /><br />
+        <label>Store Code</label><br />
+        <input name="shortName" type="text" maxlength="3" /><br/>
+        <label>Min Customers per Hour</label><br />
+        <input name="minCustHr" type="number" /><br />
+        <label>Max Customers per Hour</label><br />
+        <input name="maxCustHr" type="number" /><br />
+        <label>Avg Cookies per Customer</label><br />
+        <input name="avgCookies" type="number" /><br />
+        <button id="update-button" type="submit">Add Store!</button>
+      </fieldset>
+    </form>
     <section id="formSpace"></section>
   </main>
 
